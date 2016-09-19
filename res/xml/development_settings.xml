@@ -23,6 +23,12 @@
         android:key="debug_misc_category"
         android:order="100">
 
+        <lineageos.preference.LineageSecureSettingSwitchPreference
+            android:key="advanced_reboot"
+            android:title="@string/advanced_reboot_title"
+            android:summary="@string/advanced_reboot_summary"
+            android:defaultValue="false" />
+
         <Preference
             android:key="memory"
             android:icon="@drawable/ic_settings_memory"
