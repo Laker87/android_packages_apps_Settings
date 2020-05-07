@@ -19,7 +19,7 @@ package com.android.settings.biometrics.face;
 import android.content.Context;
 
 import com.android.settings.core.BasePreferenceController;
-import com.android.internal.util.custom.faceunlock.FaceUnlockUtils;
+import com.android.internal.util.crdroid.Utils;
 
 public class FaceSettingsManagePreferenceController extends BasePreferenceController {
 
@@ -35,7 +35,7 @@ public class FaceSettingsManagePreferenceController extends BasePreferenceContro
 
     @Override
     public int getAvailabilityStatus() {
-        if (FaceUnlockUtils.hasMotoFaceUnlock()){
+        if (Utils.hasMotoFaceUnlock()){
             return UNSUPPORTED_ON_DEVICE;
         }
         return AVAILABLE;

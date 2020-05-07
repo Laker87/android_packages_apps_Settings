@@ -38,8 +38,6 @@ import com.google.android.setupcompat.util.WizardManagerHelper;
 import com.google.android.setupdesign.span.LinkSpan;
 import com.google.android.setupdesign.template.RequireScrollMixin;
 
-import com.android.internal.util.custom.faceunlock.FaceUnlockUtils;
-
 public class FaceEnrollIntroduction extends BiometricEnrollIntroduction {
 
     private static final String TAG = "FaceIntro";
@@ -101,7 +99,7 @@ public class FaceEnrollIntroduction extends BiometricEnrollIntroduction {
                         ? R.string.security_settings_face_enroll_introduction_footer_part_2
                         : R.string.security_settings_face_settings_footer_attention_not_supported;
         footer2.setText(footer2TextResource);
-        if (FaceUnlockUtils.hasMotoFaceUnlock() && mHasPassword && mToken != null) {
+        if (com.android.internal.util.crdroid.Utils.hasMotoFaceUnlock() && mHasPassword && mToken != null) {
             openMotoFaceUnlock();
         }
     }
@@ -118,7 +116,7 @@ public class FaceEnrollIntroduction extends BiometricEnrollIntroduction {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (!FaceUnlockUtils.hasMotoFaceUnlock()) {
+        if (!com.android.internal.util.crdroid.Utils.hasMotoFaceUnlock()) {
             return;
         }
         if (requestCode != CHOOSE_LOCK_GENERIC_REQUEST) {

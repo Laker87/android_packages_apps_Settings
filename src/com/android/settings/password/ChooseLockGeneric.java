@@ -79,8 +79,6 @@ import com.android.settingslib.widget.FooterPreferenceMixinCompat;
 
 import java.util.List;
 
-import com.android.internal.util.custom.faceunlock.FaceUnlockUtils;
-
 public class ChooseLockGeneric extends SettingsActivity {
     public static final String CONFIRM_CREDENTIALS = "confirm_credentials";
 
@@ -895,7 +893,7 @@ public class ChooseLockGeneric extends SettingsActivity {
                             }
                         }
                     };
-                    if (FaceUnlockUtils.hasMotoFaceUnlock()){
+                    if (com.android.internal.util.crdroid.Utils.hasMotoFaceUnlock()){
                         final List<Face> faces = mFaceManager.getEnrolledFaces(userId);
                         if (!faces.isEmpty()) {
                             mFaceManager.remove(faces.get(0), userId, removalCallback);

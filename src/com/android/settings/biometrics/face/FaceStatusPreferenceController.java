@@ -34,8 +34,6 @@ import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.core.lifecycle.LifecycleObserver;
 import com.android.settingslib.core.lifecycle.events.OnResume;
 
-import com.android.internal.util.custom.faceunlock.FaceUnlockUtils;
-
 public class FaceStatusPreferenceController extends BiometricStatusPreferenceController
         implements LifecycleObserver, OnResume {
 
@@ -115,7 +113,7 @@ public class FaceStatusPreferenceController extends BiometricStatusPreferenceCon
     }
 
     private void updateEnabledState(Preference preference) {
-        if (FaceUnlockUtils.hasMotoFaceUnlock()) {
+        if (com.android.internal.util.crdroid.Utils.hasMotoFaceUnlock()) {
             if (Utils.isFaceDisabledByAdmin(mContext)){
                 preference.setEnabled(false);
                 preference.setSummary(R.string.disabled_by_administrator_summary);

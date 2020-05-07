@@ -28,7 +28,7 @@ import com.android.settings.utils.AnnotationSpan;
 import com.android.settingslib.HelpUtils;
 import com.android.settingslib.widget.FooterPreference;
 
-import com.android.internal.util.custom.faceunlock.FaceUnlockUtils;
+import com.android.internal.util.crdroid.Utils;
 
 /**
  * Footer for face settings showing the help text and help link.
@@ -66,7 +66,7 @@ public class FaceSettingsFooterPreferenceController extends BasePreferenceContro
                 ? R.string.security_settings_face_settings_footer
                 : R.string.security_settings_face_settings_footer_attention_not_supported;
 
-        if (FaceUnlockUtils.hasMotoFaceUnlock()){
+        if (Utils.hasMotoFaceUnlock()){
             footerRes = R.string.security_settings_face_settings_footer_moto;
         }
 
